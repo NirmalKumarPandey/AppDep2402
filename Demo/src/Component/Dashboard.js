@@ -15,7 +15,7 @@ function Dashboard() {
             method: "DELETE",
             body: dataToSend,
         };
-        let JSONData = await fetch("http://localhost:4567/deleteAccount", requestOptions);
+        let JSONData = await fetch("/deleteAccount", requestOptions);
         let JSOData = await JSONData.json();
         console.log(JSOData);
         alert(JSOData.msg);
