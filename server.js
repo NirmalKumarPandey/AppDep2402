@@ -1,9 +1,11 @@
+let dotenv = require("dotenv");
 let mongoose = require("mongoose");
 let express = require("express");
 let cors = require("cors");
 let multer = require('multer');
 var jwt = require('jsonwebtoken');
-require('dotenv').config();
+
+dotenv.config();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -24,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use("/uploads", express.static("uploads"));
+
 
 
 let userSchema = new mongoose.Schema({
@@ -184,7 +187,7 @@ app.listen(port, () => {
 
 let connectToTheMongoDB = async () => {
     try {
-        await mongoose.connect(process.env.mdbURL);
+        await mongoose.connect("process.env.mdbURL");
         // await mongoose.connect("mongodb://localhost:27017/Render1234");
         //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
         //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
