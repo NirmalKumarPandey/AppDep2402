@@ -5,6 +5,7 @@ let express = require("express");
 let cors = require("cors");
 let multer = require('multer');
 var jwt = require('jsonwebtoken');
+let path = require("node:path");
 
 
 const storage = multer.diskStorage({
@@ -26,6 +27,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use("/uploads", express.static("uploads"));
+app.use(express.static(path.join(__dirname, "./Demo/build")));
 
 
 
