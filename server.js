@@ -174,7 +174,7 @@ app.post("/validateToken", uploads.none(), async (req, res) => {
     res.json({ status: "received token" });
 
 });
-app.listen(4567, () => {
+app.listen(port, () => {
     console.log("Listening to port 4567");
 })
 
@@ -182,8 +182,10 @@ app.listen(4567, () => {
 
 let connectToTheMongoDB = async () => {
     try {
+        await mongoose.connect(mdbURL);
         // await mongoose.connect("mongodb://localhost:27017/Render1234");
-        await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
+        //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
+        //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
         console.log("Successfully connected to Mongo Database");
     }
     catch (err) {
