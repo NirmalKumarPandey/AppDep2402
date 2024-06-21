@@ -3,7 +3,7 @@ let express = require("express");
 let cors = require("cors");
 let multer = require('multer');
 var jwt = require('jsonwebtoken');
-require('.env').config();
+require('dotenv').config();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
