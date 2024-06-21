@@ -29,7 +29,7 @@ function Dashboard() {
             <TopNavigation />
             <h2>Dashboard</h2>
             <h2>Welcome {storeObj.userDetails.firstName} {storeObj.userDetails.lastName}</h2>
-            <img alt='' src={`http://localhost:4567/${storeObj.userDetails.profilePic}`}></img>
+            <img alt='' src={`/${storeObj.userDetails.profilePic}`}></img>
             <button onClick={() => {
                 deleteAccount();
             }}>Delete Account</button>
