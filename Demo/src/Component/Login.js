@@ -77,7 +77,7 @@ function Login() {
     return (
         <div className='App'>
             <form>
-                <h2>Login Page</h2>
+                <h2>Login Page No 2</h2>
 
                 <div>
                     <label>Email</label>
