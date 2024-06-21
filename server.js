@@ -1,11 +1,11 @@
 let dotenv = require("dotenv");
+dotenv.config();
 let mongoose = require("mongoose");
 let express = require("express");
 let cors = require("cors");
 let multer = require('multer');
 var jwt = require('jsonwebtoken');
 
-dotenv.config();
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -187,7 +187,8 @@ app.listen(port, () => {
 
 let connectToTheMongoDB = async () => {
     try {
-        await mongoose.connect("process.env.mdbURL");
+        console.log("MongoDB URL: ", process.env.MDB_URL);
+        await mongoose.connect(process.env.MDB_URL);
         // await mongoose.connect("mongodb://localhost:27017/Render1234");
         //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
         //  await mongoose.connect("mongodb+srv://nirmalnirman:Nirman%4024@nirmalmongodatabase.u7ozpbc.mongodb.net/Render1234?retryWrites=true&w=majority&appName=NirmalMongoDatabase");
